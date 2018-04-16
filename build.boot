@@ -1,6 +1,5 @@
 (set-env!
   :source-paths   #{"src"}
-  :resource-paths #{"resources"}
   :dependencies '[[org.clojure/clojure  "1.9.0-RC1" :scope "provided"]
                   [boot/core            "2.7.2"     :scope "provided"]
                   [adzerk/bootlaces     "0.1.13"    :scope "test"]
@@ -22,3 +21,8 @@
 
 (deftask build []
   (comp (pom) (jar) (install)))
+
+(deftask publish []
+  (comp
+   (build-jar)
+   (push-release)))
