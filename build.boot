@@ -13,9 +13,12 @@
 (bootlaces! +version+)
 
 (task-options!
- pom  {:project     'com.joshuadavey/boot-shadow-cljs
+ pom  {:project     'entranceplus/boot-shadow-cljs
        :version     +version+
        :description "Boot task to compile clojurescript via shadow-cljs"
-       :url         "https://github.com/jgdavey/boot-shadow-cljs"
-       :scm         {:url "https://github.com/jgdavey/boot-shadow-cljs"}
+       :url         "https://github.com/shakdwipeea/boot-shadow-cljs"
+       :scm         {:url "https://github.com/shakdwipeea/boot-shadow-cljs"}
        :license     {"Eclipse Public License" "http://www.eclipse.org/legal/epl-v10.html"}})
+
+(deftask build []
+  (comp (pom) (jar) (install)))
