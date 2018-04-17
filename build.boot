@@ -2,7 +2,7 @@
   :source-paths   #{"src"}
   :dependencies '[[org.clojure/clojure  "1.9.0-RC1" :scope "provided"]
                   [boot/core            "2.7.2"     :scope "provided"]
-                  [adzerk/bootlaces     "0.1.13"    :scope "test"]
+                  [entranceplus/bootlaces     "0.1.14"    :scope "test"]
                   [cheshire             "5.6.3"]])
 
 (require '[adzerk.bootlaces :refer :all])
@@ -21,6 +21,13 @@
 
 (deftask build []
   (comp (pom) (jar) (install)))
+
+;;; todo
+;; * modify bootlaces to set gpg-sign to false
+;; * change dep group of bootlaces in *all* projects
+;; * change dep group of boot-shadow-cljs in voidwalker
+
+
 
 (deftask publish []
   (comp
